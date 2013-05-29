@@ -52,7 +52,7 @@ class TubeLines
 		station_counter = 0	
 		line_counter = 0
 
-		target = File.open("victoria_stations.txt", 'r')
+		target = File.open("stations_by_line.txt", 'r')
 		lines = target.readlines
 
 		tube_line_name = lines[0].split(":")[1].chomp.strip
@@ -90,20 +90,6 @@ class TubeLines
 
 	end
 
-
-	# 		if (row.include?("Line") == true && !line_stations.empty? )
-	# 			stations = {tube_line_name => line_stations}
-	# 			# puts stations
-	# 			@tube_lines.merge!(stations)
-	# 			tube_line_name = row.split(":")[1].chomp.strip
-	# 			# puts tube_line_name
-	# 			line_stations = []
-	# 		else
-	# 			line_stations.push(row.chomp)
-	# 		end
-	# 	end
-		 
-	# end
 
 	def getLines 
 		@tube_lines

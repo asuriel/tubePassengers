@@ -1,5 +1,4 @@
 
-// Add an overlay for the year label.
 // Various accessors that specify the four dimensions of data to visualize.
 function x(d) { return d.stationIndex; }
 function y(d) { return d.lineIndex; }
@@ -7,10 +6,15 @@ function radius(d) { return d.passengerNumber; }
 function color(d) { return d.line; }
 function key(d) { return d.name; }
 
+//clock dimensions
+var clock_width = 60,
+    clock_height = 50;
+
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
-    width = 960 - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 960 - margin.right ,
+    height = 500 - margin.top - margin.bottom ;
+
 
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.linear().domain([0,53]).range([0, width]), 
@@ -25,7 +29,7 @@ var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(20, d3.format(",d
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("height", height + margin.top + margin.bottom + 250)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -60,13 +64,14 @@ svg.append("text")
     .text("Tube Lines");
     
 
-// Add the year label; the value is set on transition.
+//Add the year label; the value is set on transition.
 var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
-    .attr("y", height + 100)//- 24)
-    .attr("x", width + 100 )
+    .attr("y", height + 180)
+    .attr("x", width )
     .text(285);
+
 
 d3.json("ready_data.json", function(stations) {
 
@@ -92,7 +97,7 @@ d3.json("ready_data.json", function(stations) {
         .attr("class", "overlay")
         .attr("x", box.x)
         .attr("y", box.y)
-        .attr("width", box.width)
+        .attr("width", box.width )
         .attr("height", box.height)
         .on("mouseover", enableInteraction);
 
