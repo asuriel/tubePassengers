@@ -1,0 +1,60 @@
+Line: Victoria
+Brixton, 529.46, 94.31
+Stockwell, 501.67 , 124.24
+Vauxhall, 459.9, 175.2 
+Pimlico, 444.94, 225.88 
+Victoria, 448.28, 279.71 
+Green Park, 448.28, 335.2 
+Oxford Circus,473.04,372.03 
+Warren Street, 523, 424.24 
+Euston, 548.58, 435.25 
+King's Cross St. Pancras, 574.17, 461.58
+Highbury & Islington, 667.74,525.51 
+Finsbury Park, 695.96,571.11 
+Seven Sisters, 737.26,583.58 
+Tottenham Hale,758.98,582.14 
+Blackhorse Road, 781.3, 579.29
+Walthamstow Central 820.11, 583.58
+Line: Central
+Epping,875, 731
+Theydon Bois,875, 718
+Debden,875, 704
+Loughton,875, 692
+Buckhurst Hill,875, 681
+Grange Hill,924, 656
+Chigwell,912, 656
+Roding Valley,895, 656
+Woodford,875, 634
+South Woodford,875, 618
+Snaresbrook,875, 603
+Hainault,940, 640
+Fairlop, 940, 625
+Barkingside,940, 595
+Newbury Park,940, 595
+Gants ,929, 573
+Redbridge,912,580
+Wanstead,896, 577
+Leytonstone,875, 561
+Leyton,875, 525
+Stratford,866, 491
+Mile End,790, 418
+Bethnal Green,760, 418
+Liverpool Street,680, 388
+Bank,624, 354
+St. Paul's, 580, 370
+Chancery Lane,550, 370
+Holborn,523, 370
+Tottenham Court Road
+Oxford Circus,473, 370					
+Bond Street,440, 370
+Marble Arch,419, 370
+Lancaster Gate,404, 370
+Queensway,380, 370
+Notting Hill Gate,357, 370
+Holland Park,333, 370
+Shepherd's Bush (Cen),308, 370
+White City,274, 370
+East Acton,249, 370
+North Acton,235, 370
+West Acton,192, 370
+Ealing Broadway,141, 370

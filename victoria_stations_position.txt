@@ -1,0 +1,17 @@
+Line: Victoria
+Brixton, 0, -13
+Stockwell, -1 ,-11
+Vauxhall, -3, -9
+Pimlico, -3, -6
+Victoria, -3, -4
+Green Park, -3, -3
+Oxford Circus, 0, -2
+Warren Street, 0, 3
+Euston, 1, 4
+King's Cross St. Pancras, 2, 4
+Highbury & Islington, 6, 7
+Finsbury Park, 7, 9
+Seven Sisters, 9, 10
+Tottenham Hale,10, 10
+Blackhorse Road, 11, 10
+Walthamstow Central 12, 10

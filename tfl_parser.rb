@@ -52,7 +52,7 @@ class TubeLines
 		station_counter = 0	
 		line_counter = 0
 
-		target = File.open("stations_by_line.txt", 'r')
+		target = File.open("victoria_stations_position_px.txt", 'r')
 		lines = target.readlines
 
 		tube_line_name = lines[0].split(":")[1].chomp.strip
@@ -64,10 +64,14 @@ class TubeLines
 				station_counter = 0	
 				line_counter = line_counter + 1
 			else
-
-				station_counter = station_counter + 1
-				station = {row.chomp => [tube_line_name,line_counter,station_counter] }
-				@tube_lines.merge!(station)
+				if row.split(",").length == 3
+					station_counter = station_counter + 1
+			
+					station_name, station_x, station_y = row.split(",")
+					
+					station = {station_name => [tube_line_name,station_x.strip.to_i,station_y.strip.to_i] }
+					@tube_lines.merge!(station)
+				end
 				
 			end
 		end
@@ -76,10 +80,10 @@ class TubeLines
 	def station_line_index(station)
 		data = {:name=> station}
 		line = {:line => @tube_lines[station][0]}
-		line_index = {:line_index => @tube_lines[station][1]}
-		station_index = {:station_index => @tube_lines[station][2]}
+		station_x = {:station_x => @tube_lines[station][1]}
+		station_y  = {:station_y => @tube_lines[station][2]}
 
-		data.merge!(line).merge!(line_index).merge!(station_index)
+		data.merge!(line).merge!(station_x).merge!(station_y)
 		data
 
 	end
