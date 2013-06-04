@@ -1,9 +1,9 @@
 Line: Victoria
 Brixton, 529.46, 94.31
-Stockwell, 501.67 , 124.24
+Stockwell, 501.67 , 127
 Vauxhall, 459.9, 175.2 
 Pimlico, 444.94, 225.88 
-Victoria, 448.28, 279.71 
+Victoria, 448.28, 289
 Green Park, 448.28, 335.2 
 Oxford Circus,473.04,372.03 
 Warren Street, 523, 424.24 
@@ -58,3 +58,82 @@ East Acton,249, 370
 North Acton,235, 370
 West Acton,192, 370
 Ealing Broadway,141, 370
+Line: Circle
+Tower ,689,333
+Aldgate,701,354
+Liverpool Street,679,356
+Moorgate,635,396
+Barbican,620,407
+Farringdon,604,424
+King's Cross St. Pancras,576,440
+Euston Square,542,440
+Great Portland Street,483,440
+Baker Street,450,440
+Edgware Road (Cir),390,434
+Paddington,360,430
+Bayswater,360,406
+Notting Hill Gate,360,372
+High Street Kensington,360,344
+Gloucester Road,372,289
+South Kensington,389,289
+Sloane Square,421,289
+Victoria,448.28,289 
+St.James's Park,466,289
+Westminster,492,289
+Embankment,525,289
+Temple,556,289
+Blackfriars,596,258
+Mansion House,606,313
+Cannon Street,619,321
+Monument,645,333
+Line: Northern
+Morden,391,10
+South Wimbledon,408,21
+Colliers Wood,419,24
+Tooting Broadway,430,25
+Tooting Bec,441,57
+Balham,447,68
+Clapham South,457,84
+Clapham Common,467,96
+Clapham North,487,108
+Stockwell,500,127 
+Oval,513,129
+Kennington,523,145
+Elephant Castle,545,174
+Borough,581,207
+London Bridge,634,279
+Bank,634,343
+Angel,643,396
+Old Street,634,430
+Angel,610,446
+King's Cross St. Pancras,574.17,430 
+Waterloo,523,252
+Embankment,523,282
+Charing Cross,523,309
+Leicester Square,523,347
+Tottenham Court Road,523,372
+Goodge Street,523,389
+Warren Street,523,424.24
+Euston, 541,558
+Mornington Crescent,534,488
+Camden Town,539,508
+Kentish Town,577,557
+Tufnell Park,577,576
+Archway,577,594
+Highgate,577,614
+East Finchley,577,629
+Finchley Central,577,642
+Mill Hill East,555,673
+West Finchley,577,665
+Woodside Park, 577, 680
+Totteridge & Whetstone, 577, 697
+High Barnet, 577, 710
+Chalk Farm,528,528
+Belsize Park,514,542
+Hampstead,489,572
+Golders Green,477,588
+Brent Cross,462,598
+Hendon Central,449,616
+Colindale,437,626
+Burnt Oak,424,640
+Edgware,404,663

@@ -8,8 +8,9 @@ function key(d) { return d.name; }
 
 //line colours
 var lineColors = function(){
-    var tubeColors =  ["#000099","#660066","#006633","#000000","#CC3333","#FFCC00","#868F98","#0099CC","#996633"];
+    //var tubeColors =  ["#000099","#660066","#006633","#000000","#CC3333","#FFCC00","#868F98","#0099CC","#996633"];
    // var tubeColors =  ["#CC3333","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"];
+    var tubeColors = ["#FFCC00","#000000","#CC3333","#0099CC"];
     return d3.scale.ordinal().range(tubeColors);
 };
 
