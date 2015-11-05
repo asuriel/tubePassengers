@@ -15,7 +15,8 @@ var lineColors = function(){
 };
 
 // Chart dimensions.
-var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
+// var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
+var margin = {top: 0, right: 0, bottom: 0, left: 0},
     width = 960 - margin.right ,
     height = 500 - margin.top - margin.bottom ;
 
@@ -72,7 +73,7 @@ svg.append("text")
 var label = svg.append("text")
     .attr("class", "year label")
     .attr("text-anchor", "end")
-    .attr("y", height + 180)
+    .attr("y", height)
     .attr("x", width )
     .text(285);
 

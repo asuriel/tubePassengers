@@ -1,22 +1,31 @@
 
-header {}
+* {
+  box-sizing: border-box;
+}
+
+header {
+  margin-left:48px;
+}
 
   .chart_container {
     position:relative;
-  }
-
-  #chart svg g {
-    position:absolute;
-    float:right;
-    width:70%;
-    /*margin-left: -40px;*/
+    margin: 48px;
     height: 506px;
   }
 
-  aside .sidebar {
-    position:absolute;
-    float:left;
-    width:15%;
+  p#chart {
+    position: absolute;
+    /*float: right;*/
+    overflow: hidden;
+    width: 960;
+    margin-left: 150px;
+    
+  }
+
+ 
+
+  footer aside{
+    clear:both;
   }
 
   text {
@@ -41,6 +50,7 @@ header {}
     font: 500 120px "Roboto";
     fill: #ddd;
     width: 60px;
+    top:-200px;
     
   }
 
@@ -54,8 +64,36 @@ header {}
     cursor: ew-resize;
   }
 
+   aside.sidebar {
+    position:absolute;
+    /*float:left;*/
+    left:0;
+    width:150px;
+    }
+
+    ul.options {
+      padding-left: 0px;
+    }
+
+    ul.options li {
+      list-style: none;
+    }
+
+    ul.options li button { 
+      width:124px;
+      border:none;
+      margin: 0px 12px 6px 0px;
+      padding:6px;
+      font:24px roboto;
+      color: white;
+    }
+
+  
 
 
+.clearfix {
+  overflow: auto;
+}
 
   
 
