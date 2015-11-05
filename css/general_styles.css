@@ -1,0 +1,63 @@
+
+header {}
+
+  .chart_container {
+    position:relative;
+  }
+
+  #chart svg g {
+    position:absolute;
+    float:right;
+    width:70%;
+    /*margin-left: -40px;*/
+    height: 506px;
+  }
+
+  aside .sidebar {
+    position:absolute;
+    float:left;
+    width:15%;
+  }
+
+  text {
+  font: 10px sans-serif;
+  }
+
+  .dot {
+    stroke: #000;
+  }
+
+  .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .label {
+    fill: #777;
+  }
+
+   .year.label {
+    font: 500 120px "Roboto";
+    fill: #ddd;
+    width: 60px;
+    
+  }
+
+  .year.label.active {
+    fill: #aaa;
+  }
+
+  .overlay {
+    fill: none;
+    pointer-events: all;
+    cursor: ew-resize;
+  }
+
+
+
+
+  
+
+  
+

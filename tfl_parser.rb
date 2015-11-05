@@ -52,7 +52,7 @@ class TubeLines
 		station_counter = 0	
 		line_counter = 0
 
-		target = File.open("victoria_stations_position_px.txt", 'r')
+		target = File.open("data/victoria_stations_position_px.txt", 'r')
 		lines = target.readlines
 
 		tube_line_name = lines[0].split(":")[1].chomp.strip
@@ -109,7 +109,7 @@ class TubeLines
 	reader = TubeLines.new
 	reader.extract_stations_by_line!()
 	# puts reader.getLines["Bermondsey"]
-	reader.get_passenger_data("passenger_data_longer.csv", "ready_data.json")
+	reader.get_passenger_data("/data/passenger_data_longer.csv", "/data/ready_data.json")
 	
 
 

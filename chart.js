@@ -77,7 +77,7 @@ var label = svg.append("text")
     .text(285);
 
 
-d3.json("ready_data.json", function(stations) {
+d3.json("/data/ready_data.json", function(stations) {
 
      // Add a dot per station. Initialize the data at 1800, and set the colors.
     var dot = svg.append("g")
