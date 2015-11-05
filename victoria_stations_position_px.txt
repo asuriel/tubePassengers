@@ -137,3 +137,50 @@ Hendon Central,449,616
 Colindale,437,626
 Burnt Oak,424,640
 Edgware,404,663
+Line: Picadilly
+Cockfosters,699,707
+Oakwood,699,692
+Southgate,699,676
+Arnos Grove,699,661
+Bounds Green,699,646
+Wood Green,699,631 
+Turnpike Lane,699,616
+Manor House,699,594
+Finsbury Park,695,578
+Arsenal,675,558
+Holloway Road,662,543
+Caledonian Road,649,529
+King's Cross St. Pancras,576,449
+Russell Square,557,404
+Holborn,549,372
+Covent Garden,537,357
+Leicester Square,523,347
+Piccadilly Circus,493,339
+Green Park,448.25,335
+Hyde Park Corner,429,325
+Knightsbridge,414,315
+South Kensington,388,294
+Gloucester Road,374,290
+Earl's Court,344,290
+Barons Court,306,290
+Hammersmith,288,290
+Acton Town,166,290
+South Ealing,148,286
+Northfields,134,275
+Boston Manor,123,264
+Osterley,110,249
+Hounslow East,100,235
+Hounslow Central,84,220
+Hounslow West,80,210
+Hatton Cross,66,197
+Heathrow Terminal 4,57,167,
+Heathrow Terminal 5,23,147
+Heathrow Terminals 123,48,180
+Ealing Common, 161, 335
+North Ealing,161,393
+Park Royal,161,413
+Alperton,161,497
+Sudbury Town,161,524
+Sudbury Hill,161,547
+South Harrow,161,572
+Rayners Lane,161,602

@@ -10,7 +10,7 @@ class TubeLines
 	end
 
 
-	def get_data(url, output)
+	def get_passenger_data(url, output)
 		target = File.open(output, 'w')
 		stations = []
 		CSV.foreach(url,:headers=> true) do |row|
@@ -78,7 +78,7 @@ class TubeLines
 	end
 
 	def station_line_index(station)
-		data = {:name=> station}
+		data = {:name => station}
 		line = {:line => @tube_lines[station][0]}
 		station_x = {:station_x => @tube_lines[station][1]}
 		station_y  = {:station_y => @tube_lines[station][2]}
@@ -109,7 +109,7 @@ class TubeLines
 	reader = TubeLines.new
 	reader.extract_stations_by_line!()
 	# puts reader.getLines["Bermondsey"]
-	reader.get_data("passenger_data_longer.csv", "ready_data.json")
+	reader.get_passenger_data("passenger_data_longer.csv", "ready_data.json")
 	
 
 

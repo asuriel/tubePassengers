@@ -10,7 +10,7 @@ function key(d) { return d.name; }
 var lineColors = function(){
     //var tubeColors =  ["#000099","#660066","#006633","#000000","#CC3333","#FFCC00","#868F98","#0099CC","#996633"];
    // var tubeColors =  ["#CC3333","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"];
-    var tubeColors = ["#FFCC00","#000000","#CC3333","#0099CC"];
+    var tubeColors = ["#000099","#FFCC00","#000000","#CC3333","#0099CC"];
     return d3.scale.ordinal().range(tubeColors);
 };
 
@@ -79,7 +79,7 @@ var label = svg.append("text")
 
 d3.json("ready_data.json", function(stations) {
 
-     // Add a dot per nation. Initialize the data at 1800, and set the colors.
+     // Add a dot per station. Initialize the data at 1800, and set the colors.
     var dot = svg.append("g")
         .attr("class", "dots")
     .selectAll(".dot")
