@@ -1,4 +1,3 @@
-
 // Various accessors that specify the four dimensions of data to visualize.
 function x(d) { return d.stationXposition; }
 function y(d) { return d.stationYposition; }
@@ -6,16 +5,14 @@ function radius(d) { return d.passengerNumber; }
 function color(d) { return d.line; }
 function key(d) { return d.name; }
 
+
 //line colours
 var lineColors = function(){
-    //var tubeColors =  ["#000099","#660066","#006633","#000000","#CC3333","#FFCC00","#868F98","#0099CC","#996633"];
-   // var tubeColors =  ["#CC3333","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"];
     var tubeColors = ["#000099","#FFCC00","#000000","#CC3333","#0099CC"];
     return d3.scale.ordinal().range(tubeColors);
 };
 
 // Chart dimensions.
-// var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
 var margin = {top: 0, right: 0, bottom: 0, left: 0},
     width = 960 - margin.right ,
     height = 500 - margin.top - margin.bottom ;
@@ -30,6 +27,13 @@ var xScale = d3.scale.linear().domain([0,1043]).range([0, width]),
 // The x & y axes.
 var xAxis = d3.svg.axis().orient("bottom").scale(xScale).ticks(30, d3.format(",d")),
     yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(30, d3.format("d"));
+
+//create a second svg container
+var svg2 = d3.select("#sidebar").append("svg")
+  .attr("width", 150)
+  .attr("height", 750)
+  .append("g")
+    // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");    
 
 // Create the SVG container and set the origin.
 var svg = d3.select("#chart").append("svg")
@@ -49,25 +53,7 @@ svg.append("g")
 svg.append("g")
     .attr("class", "y axis")
     .attr("visibility", "hidden")
-    .call(yAxis);
-
-// Add an x-axis label.
-svg.append("text")
-    .attr("class", "x label")
-    .attr("text-anchor", "end")
-    .attr("x", width)
-    .attr("y", height - 6);
-    //.text("Tube Stations");
-
-// Add a y-axis label.
-svg.append("text")
-    .attr("class", "y label")
-    .attr("text-anchor", "end")
-    .attr("y", 6)
-    .attr("dy", ".75em")
-    .attr("transform", "rotate(-90)");
-   // .text("Tube Lines");
-    
+    .call(yAxis);    
 
 //Add the year label; the value is set on transition.
 var label = svg.append("text")
@@ -76,6 +62,29 @@ var label = svg.append("text")
     .attr("y", height)
     .attr("x", width )
     .text(285);
+
+
+var numberOfStationsToDisplay = 8;
+
+function createBusyStationLabels(numberOfTopStations) {
+
+  var busyStationLabels = [];
+
+  for(var i = 0; i < numberOfTopStations; i++) {
+
+    busyStationLabels[i] = svg2.append("text")
+      .attr("y", i*20)
+      .attr("x", 0)
+      .text(i+1 + "st  " + "busiest");
+  }
+
+  return busyStationLabels;
+}
+
+var busyStationLabels = createBusyStationLabels(numberOfStationsToDisplay);
+
+
+
 
 
 d3.json("/data/ready_data.json", function(stations) {
@@ -106,23 +115,15 @@ d3.json("/data/ready_data.json", function(stations) {
         .attr("height", box.height)
         .on("mouseover", enableInteraction);
 
-  // Start a transition that interpolates the data based on year.
+  // Start a transition that interpolates the data based on time.
   svg.transition()
       .duration(30000)
       .ease("linear")
       .tween("times", tweenTimes)
       .each("end", enableInteraction);
+
        
       // Positions the dots based on data.
-    function position(dot) {
-      dot .attr("cx", function(d) { return xScale(x(d)); })
-          .attr("cy", function(d) { return yScale(y(d)); })
-          .attr("r", function(d) { return radiusScale(radius(d)); });
-    }
-    var xPosition = function(){
-
-    };
-
     function position(dot) {
       dot .attr("cx", function(d) { return xScale(x(d)); })
           .attr("cy", function(d) { return yScale(y(d)); })
@@ -158,7 +159,7 @@ d3.json("/data/ready_data.json", function(stations) {
         }
 
         function mousemove() {
-            displayTime(timesScale.invert(d3.mouse(this)[0]));
+            updateChart(timesScale.invert(d3.mouse(this)[0]));
         }
     }
 
@@ -166,14 +167,35 @@ d3.json("/data/ready_data.json", function(stations) {
   // For the interpolated data, the dots and label are redrawn.
     function tweenTimes() {
       var times = d3.interpolateNumber(285, 1425);
-      return function(t) { displayTime(times(t));};
+      return function(t) { updateChart(times(t));};
     }
 
-   // Updates the display to show the specified year.
-    function displayTime(time) {
-        dot.data(getData(time), key).call(position).sort(order);
-        //label.text(Math.floor(285/60) + ":" + 285%60);
-        label.text( getTime( (Math.round(time) * 60 * 1000)));
+
+    function renderBusiestStations(stationData) {
+
+      var sortedData =_.sortBy(stationData,"passengerNumber").reverse();
+
+       for (var i = 0; i < busyStationLabels.length; i++) {
+
+         busyStationLabels[i].text(sortedData[i].name);
+       
+       };
+        // busy1.text(sortedData[0].name);
+        // busy2.text(sortedData[1].name);
+        // busy3.text(sortedData[2].name);
+    }
+    
+   // Updates the display to show time of the day.
+    function updateChart(time) {
+      var data = getData(time);
+
+      renderBusiestStations(data); 
+      dot.data(data, key).call(position);//.sort(order);
+      //label.text(Math.floor(285/60) + ":" + 285%60);
+      label.text( getTime( (Math.round(time) * 60 * 1000)));
+
+
+    //console.log('time update:' + time);
     }
 
     function getData(time) {
@@ -195,11 +217,16 @@ d3.json("/data/ready_data.json", function(stations) {
         return values[i][1];
     }
 
+    //refactor this so that it receives the hour in 0445 format directly
     function getTime(milliseconds){
        var date = new Date(milliseconds);
        return date.getHours() + ":" + (date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes())
 
     }
+
+
+
+    
 
 });    
 

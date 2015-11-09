@@ -17,9 +17,8 @@ header {
     position: absolute;
     /*float: right;*/
     overflow: hidden;
-    width: 960;
-    margin-left: 150px;
-    
+    /*margin-right:150px;*/
+    width: 1220px;
   }
 
  
@@ -64,9 +63,9 @@ header {
     cursor: ew-resize;
   }
 
-   aside.sidebar {
+   /*aside.sidebar {
     position:absolute;
-    /*float:left;*/
+    float:left;
     left:0;
     width:150px;
     }
@@ -86,7 +85,7 @@ header {
       padding:6px;
       font:24px roboto;
       color: white;
-    }
+    }*/
 
   
 
